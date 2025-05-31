@@ -1,14 +1,15 @@
 {
-  "functions": {
-    "api/predict.py": {
-      "runtime": "@vercel/python@3.9"
-    }
-  },
-  "routes": [
-    {
-      "src": "/predict",
-      "methods": ["POST"],
-      "dest": "api/predict.py"
-    }
-  ]
+    "version": 2,
+    "builds": [
+        {
+            "src": "./api/predict.py",
+            "use": "@vercel/python"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/predict.py"
+        }
+    ]
 }
