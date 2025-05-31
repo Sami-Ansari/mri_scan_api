@@ -1,15 +1,7 @@
 {
-    "version": 2,
-    "builds": [
-        {
-            "src": "./api/predict.py",
-            "use": "@vercel/python"
-        }
-    ],
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "/predict.py"
-        }
-    ]
+  "functions": {
+    "api/**": {
+      "excludeFiles": "{.next,.git,node_modules}/**"
+    }
+  }
 }
